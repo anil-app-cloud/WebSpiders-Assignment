@@ -1,0 +1,58 @@
+GET http://localhost:3000/tasks
+
+###
+
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "listing 1",
+  "description": "Invite users to test the new feature and gather feedback for improvements.",
+  "status": "TODO",
+  "priority": "HIGH",
+  "dueDate": "2024-12-14T16:00:00.000Z"
+}
+
+
+
+
+
+
+
+
+
+
+
+###
+GET http://localhost:3000/tasks/675423af8d05de49e214cc40
+
+###
+
+PUT http://localhost:3000/tasks/6754240c8d05de49e214cc46
+Content-Type: application/json 
+
+{
+    "title": "Client presentation completed",
+    "description": "Invite users to test the new feature and gather feedback for improvements.",
+    "status": "TODO",
+    "priority": "HIGH",
+    "dueDate": "2024-12-14T16:00:00.000Z",
+    "createdAt": "2024-12-07T06:03:27.174Z",
+    "updatedAt": "2024-12-07T06:03:27.174Z",
+    "__v": 0
+}
+
+###
+
+DELETE http://localhost:3000/tasks/675425498d05de49e214cc5b
+###
+
+GET http://localhost:3000/tasks?status=TODO
+
+###
+GET http://localhost:3000/tasks?status=IN_PROGRESS&priority=HIGH
+
+###
+GET http://localhost:3000/tasks?priority=MEDIUM&limit=5
+
+###
