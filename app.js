@@ -3,9 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/tasks');
 const errorHandler = require('./middlewares/errorHandler');
+const authorization = require("./middlewares/authorization")
+const authentication  = require('./routes/authentication')
 
 const app = express();
 app.use(express.json());
+
+app.use("/", authentication)
+
+app.use(authorization);
 
 app.use('/tasks', taskRoutes);
 
